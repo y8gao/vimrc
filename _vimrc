@@ -75,11 +75,16 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'scrooloose/syntastic'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'Yggdroot/indentLine'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'isnowfy/python-vim-instant-markdown'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -124,11 +129,12 @@ set bg=dark
 set cursorline
 
 if GuiRunning() == "True"
-    colorscheme evening
-    "colorscheme solarized
+    "colorscheme evening
+    colorscheme solarized
     set lines=32 columns=120
     "set guifont=Source_Code_Pro:h11:cANSI
     set guifont=Courier_New:h11:cANSI
+    "set guifont=Consolas_for_Powerline_FixedD:h11:cANSI
     set guioptions-=T
     "au GUIEnter * simalt ~x
 else
@@ -168,6 +174,8 @@ set tildeop
 
 " The file list in current directory
 map <F3> :e .<CR>
+
+map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
 " Highlight the sdt, spd, sst, and scc file with sdl syntax
 au BufNewFile,BufRead *.sdt set filetype=sdl
@@ -250,12 +258,6 @@ let g:winManagerWidth = 30
 let g:defaultExplorer = 0
 let g:AutoOpenWinManager = 1
 
-"
-" Syntastic Configuration
-"
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -274,3 +276,45 @@ endif
 " Vim Notes Plugin configuration
 let g:notes_directories = ['D:/documents/vim-notes', 'D:/documents/vim-notes/Dropbox/Shared Notes']
 
+" Vim-Markdown Plugin Conf
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_folding_disabled=1
+
+"au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
+
+" VIm Markdown-Preview Conf
+" path to the chrome or the command to open chrome(or other modern browsers)
+let g:mkdp_path_to_chrome = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+
+" set to 1, the vim will open the preview window once enter the markdown
+" buffer
+let g:mkdp_auto_start = 0
+
+" set to 1, the vim will auto open preview window when you edit the
+" markdown file
+let g:mkdp_auto_open = 0
+
+" set to 1, the vim will auto close current preview window when change
+" from markdown buffer to another buffer
+let g:mkdp_auto_close = 1
+
+" set to 1, the vim will just refresh markdown when save the buffer or
+" leave from insert mode, default 0 is auto refresh markdown as you edit or
+" move the cursor
+let g:mkdp_refresh_slow = 0
+
+let g:airline#extensions#tabline#enabled = 1
+"设置状态栏符号显示，下面编码用双引号"
+"let g:Powerline_symbols="fancy"
+"let g:airline_symbols = {}
+"let g:airline_left_sep = "\u2b80"
+"let g:airline_left_alt_sep = "\u2b81"
+"let g:airline_right_sep = "\u2b82"
+"let g:airline_right_alt_sep = "\u2b83"
+"let g:airline_symbols.branch = "\u2b60"
+"let g:airline_symbols.readonly = "\u2b64"
+"let g:airline_symbols.linenr = "\u2b61"
+
+ "设置顶部tabline栏符号显示"
+ "let g:airline#extensions#tabline#left_sep = "\u2b80"
+ "let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
