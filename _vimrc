@@ -1,6 +1,3 @@
-set langmenu=en_US
-let $LANG = 'en_US'
-language messages en_us.utf-8
 " ==============================
 " Platform
 function! MySys()
@@ -133,7 +130,11 @@ if GuiRunning() == "True"
     colorscheme solarized
     set lines=32 columns=120
     "set guifont=Source_Code_Pro:h11:cANSI
-    set guifont=Courier_New:h11:cANSI
+    if MySys() == "windows"
+        set guifont=Courier_New:h11:cANSI
+    else
+        set guifont=Monospace\ 11
+    endif
     "set guifont=Consolas_for_Powerline_FixedD:h11:cANSI
     set guioptions-=T
     "au GUIEnter * simalt ~x
