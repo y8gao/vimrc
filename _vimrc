@@ -117,8 +117,6 @@ filetype plugin indent on    " required
 
 "set enc=gbk
 "set fencs=gbk,gb2312,gb18030,cp936,utf8
-set enc=utf8
-set fencs=utf8,gbk,gb2312,gb18030,cp936
 
 set bg=dark
 "set bg=light
@@ -144,6 +142,7 @@ endif
 
 syntax on
 
+set encoding=utf-8
 set nu
 set ruler
 set autochdir
@@ -236,7 +235,10 @@ endif
 let Tlist_Auto_Open=0
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1
+let Tlist_Use_Right_Window = 0
+let tlist_sdl_settings = 'sdl;p:procedure;m:message'
+
+nnoremap <silent> <F8> :TlistToggle<CR>
 
 """"""""""""""""""""""""""""""
 " BufExplorer
@@ -319,3 +321,7 @@ let g:airline#extensions#tabline#enabled = 1
  "设置顶部tabline栏符号显示"
  "let g:airline#extensions#tabline#left_sep = "\u2b80"
  "let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
+set langmenu=en_US
+let $LANG= 'en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
