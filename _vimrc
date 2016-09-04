@@ -76,8 +76,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'Yggdroot/indentLine'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'isnowfy/python-vim-instant-markdown'
@@ -118,8 +116,8 @@ filetype plugin indent on    " required
 "set enc=gbk
 "set fencs=gbk,gb2312,gb18030,cp936,utf8
 
-set bg=dark
-"set bg=light
+"set bg=dark
+set bg=light
 "set guifont=Ubuntu_Mono:h12:cANSI
 set cursorline
 
@@ -133,16 +131,18 @@ if GuiRunning() == "True"
     else
         set guifont=Monospace\ 11
     endif
-    "set guifont=Consolas_for_Powerline_FixedD:h11:cANSI
     set guioptions-=T
-    "au GUIEnter * simalt ~x
 else
-    hi CursorLine cterm=NONE ctermbg=black
+    if &background == "dark"
+        hi CursorLine cterm=NONE ctermbg=black
+    else
+        hi CursorLine cterm=NONE ctermbg=lightgrey
+    endif
 endif
 
 syntax on
 
-set encoding=utf-8
+
 set nu
 set ruler
 set autochdir
@@ -275,9 +275,6 @@ if has("autocmd")
   " remove trailing white spaces
   autocmd BufWritePre * :%s/\s\+$//e
 endif
-
-" Vim Notes Plugin configuration
-let g:notes_directories = ['D:/documents/vim-notes', 'D:/documents/vim-notes/Dropbox/Shared Notes']
 
 " Vim-Markdown Plugin Conf
 let g:vim_markdown_frontmatter=1
