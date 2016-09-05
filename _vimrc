@@ -122,6 +122,7 @@ set bg=light
 set cursorline
 
 if GuiRunning() == "True"
+    set bg=dark
     "colorscheme evening
     colorscheme solarized
     set lines=32 columns=120
