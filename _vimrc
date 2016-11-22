@@ -116,8 +116,8 @@ filetype plugin indent on    " required
 "set enc=gbk
 "set fencs=gbk,gb2312,gb18030,cp936,utf8
 
-"set bg=dark
-set bg=light
+set bg=dark
+"set bg=light
 "set guifont=Ubuntu_Mono:h12:cANSI
 set cursorline
 
@@ -130,7 +130,7 @@ if GuiRunning() == "True"
     if MySys() == "windows"
         set guifont=Courier_New:h11:cANSI
     else
-        set guifont=Monospace\ 11
+        set guifont=Ubuntu\ Mono\ 11
     endif
     set guioptions-=T
 else
