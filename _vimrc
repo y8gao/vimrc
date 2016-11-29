@@ -80,6 +80,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'isnowfy/python-vim-instant-markdown'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tmhedberg/SimpylFold'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -169,6 +170,10 @@ set noswapfile
 
 "set margin
 set scrolloff=3
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 
 "set tildeop for changing case
 set tildeop
