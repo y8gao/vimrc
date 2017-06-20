@@ -82,6 +82,9 @@ Plugin 'isnowfy/python-vim-instant-markdown'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/SimpylFold'
 
+" Better JSON
+Plugin  'elzr/vim-json'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 Plugin 'winmanager'
@@ -126,7 +129,7 @@ if GuiRunning() == "True"
     set bg=dark
     "colorscheme evening
     colorscheme solarized
-    set lines=32 columns=120
+    "set lines=32 columns=120
     "set guifont=Source_Code_Pro:h11:cANSI
     if MySys() == "windows"
         set guifont=Courier_New:h11:cANSI
@@ -328,3 +331,6 @@ set langmenu=en_US
 let $LANG= 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+
+" Vim-json settings
+let g:vim_json_syntax_conceal = 0
