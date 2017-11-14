@@ -126,6 +126,14 @@ set bg=dark
 set cursorline
 
 if GuiRunning() == "True"
+" CTRL-V and SHIFT-Insert are Paste
+imap <S-Insert>		"+gP
+cmap <S-Insert>		"+gP
+
+imap <S-Insert>		<C-R>+
+cmap <S-Insert>		<C-R>+
+
+
     set bg=dark
     "colorscheme evening
     colorscheme solarized
@@ -157,10 +165,10 @@ set hlsearch
 set autoindent
 set cindent
 " Set the width of Tab
-set tabstop=4
-" Set the indent to 4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+" Set the indent to 2
+set softtabstop=2
+set shiftwidth=2
 " Replace tab with space
 set expandtab
 autocmd FileType make set noexpandtab
