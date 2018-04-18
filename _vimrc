@@ -61,49 +61,33 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
+" Settings for layout
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/bufexplorer.zip'
-Plugin 'notpratheek/vim-luna'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'scrooloose/syntastic'
+Plugin 'winmanager'
+
+" Themes for look
+Plugin 'notpratheek/vim-luna'
+Plugin 'altercation/vim-colors-solarized'
+
+" Settings for feel
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'Yggdroot/indentLine'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'isnowfy/python-vim-instant-markdown'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Yggdroot/indentLine'
 
 " Better JSON
 Plugin  'elzr/vim-json'
 
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-Plugin 'winmanager'
-
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -117,12 +101,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"set enc=gbk
-"set fencs=gbk,gb2312,gb18030,cp936,utf8
-
-set bg=dark
-"set bg=light
-"set guifont=Ubuntu_Mono:h12:cANSI
 set cursorline
 
 if GuiRunning() == "True"
@@ -133,8 +111,7 @@ cmap <S-Insert>		"+gP
 imap <S-Insert>		<C-R>+
 cmap <S-Insert>		<C-R>+
 
-
-    set bg=dark
+    set bg=light
     "colorscheme evening
     colorscheme solarized
     "set lines=32 columns=120
@@ -142,7 +119,7 @@ cmap <S-Insert>		<C-R>+
     if MySys() == "windows"
         set guifont=Courier_New:h11:cANSI
     else
-        set guifont=Ubuntu\ Mono\ 11
+        set guifont=Ubuntu\ Mono\ 13
     endif
     set guioptions-=T
 else
@@ -165,10 +142,10 @@ set hlsearch
 set autoindent
 set cindent
 " Set the width of Tab
-set tabstop=2
+set tabstop=4
 " Set the indent to 2
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 " Replace tab with space
 set expandtab
 autocmd FileType make set noexpandtab
