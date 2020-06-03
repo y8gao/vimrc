@@ -123,6 +123,7 @@ cmap <S-Insert>		<C-R>+
     endif
     set guioptions-=T
 else
+    set bg=dark
     if &background == "dark"
         hi CursorLine cterm=NONE ctermbg=black
     else
